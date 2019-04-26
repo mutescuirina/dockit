@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+
+    <h1>Change to your entry</h1>
+    <a href="/dockit">Back</a>
+    <div class="container">
+     <form action="/dockit/<%=entry._id%>?_method=PUT" method="POST">
+   Distance: <input type="text" name="distance" value="<%=entry.distance%>"/><br/>
+    Description:<input type="textarea" name="description" value="<%=entry.description%>"/><br>
+    Zone:<input type="number" name="zone" value="<%=entry.zone%>"/><br>
+
+    <input type="submit" name="" value="Submit Changes"/>
+    </form>
+    
+    </div>
+</body>
+</html>

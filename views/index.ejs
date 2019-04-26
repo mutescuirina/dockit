@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+     
+    <header>
+      <h2>My entries</h2>
+      </header>
+       <a href="/dockit/new">Add a workout</a>
+      <div class="container">
+          <%entry.forEach((entry,index)=>{%>
+        <div class="card">
+            <h4><%=entry.distance%></h4>
+            <h4><%=entry.zone%></h4>
+            <h4><%=entry.description%></h4>
+            <div class="btns">
+             <form action="/dockit/<%= entry._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+            </form>
+            <a href="/dockit/<%=entry._id%>/edit">Edit</a>
+            </div>
+       </div>
+      
+          <%})%>
+          
+      </div>
+
+        
+</body>
+</html>
