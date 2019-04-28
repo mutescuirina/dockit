@@ -52,7 +52,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //ROOT
 app.get('/' , (req, res) => {
-  res.send('Hello World this is still connected!');
+  res.send('this is still connected!');
 });
 
 //HOME
