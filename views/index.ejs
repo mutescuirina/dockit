@@ -13,15 +13,13 @@
       <div class="container">
           <%entry.forEach((entry,index)=>{%>
         <div class="card">
-            <h4><%=entry.distance%></h4>
+            <h4><%=entry.distance + " Kilometers"%></h4>
             <h4><%=entry.zone%></h4>
             <h4><%=entry.description%></h4>
-            <div class="btns">
              <form action="/dockit/<%= entry._id %>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE"/>
-            </form>
             <a href="/dockit/<%=entry._id%>/edit">Edit</a>
-            </div>
+            </form>
        </div>
       
           <%})%>
