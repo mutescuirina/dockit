@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const entrySchema = new mongoose.Schema({
+    date:{type:Date},
     description:{ type: String},
     distance: { type: Number},
     boat:{ type: String},

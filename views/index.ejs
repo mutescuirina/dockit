@@ -2,28 +2,39 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <% include ./partials/head.ejs %>
 </head>
 <body>
-     
-    <header>
-      <h2>My entries</h2>
+     <div class="container">
+     <header>
+      <h2>Dockit</h2>
+      <nav>
+      <button>Log In</button>
+      <button> Sign Up</button>
+      </nav>
       </header>
-       <a href="/dockit/new">Add a workout</a>
-      <div class="container">
-          <%entry.forEach((entry,index)=>{%>
-        <div class="card">
-            <h4><%=entry.distance + " Kilometers"%></h4>
-            <h4><%=entry.zone%></h4>
-            <h4><%=entry.description%></h4>
-             <form action="/dockit/<%= entry._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE"/>
-            <a href="/dockit/<%=entry._id%>/edit">Edit</a>
-            </form>
+     <div class="row">
+    
+       <a href="/dockit/new"><i class="far fa-plus-square"></i></a>
        </div>
       
+          <%entry.forEach((entry,index)=>{%>
+        <div class="row">
+        <div class="four columns">
+
+        <a href="/dockit/<%=entry._id%>"><h4><%=entry.date%></h4>
+        <p><%=entry._id%></p>
+             <h4><%=entry.distance + " Kelometers"%></h4>
+            <h4><%=entry.zone%></h4></a>
+             <form action="/dockit/<%= entry._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+            <a href="/dockit/<%=entry._id%>/edit"><i class="fas fa-pen-square"></i></a>
+            </form>
+           </div> 
+       
+     
           <%})%>
-          
+          </div>
       </div>
 
         

@@ -1,0 +1,28 @@
+.row {
+    border: 1px solid green;
+}
+
+header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+}
+.four {
+    display: flex;
+    flex-direction: column;
+    background: rgb(165, 51, 51);
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.fas {
+   color: red;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
