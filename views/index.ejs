@@ -6,13 +6,7 @@
 </head>
 <body>
      <div class="container">
-     <header>
-      <h2>Dockit</h2>
-      <nav>
-      <button>Log In</button>
-      <button> Sign Up</button>
-      </nav>
-      </header>
+     <% include ./partials/header.ejs %>
      <div class="row">
     
        <a href="/dockit/new"><i class="far fa-plus-square"></i></a>
@@ -23,9 +17,14 @@
         <div class="four columns">
 
         <a href="/dockit/<%=entry._id%>"><h4><%=entry.date%></h4>
-        <p><%=entry._id%></p>
-             <h4><%=entry.distance + " Kelometers"%></h4>
-            <h4><%=entry.zone%></h4></a>
+              <span>distance</span> 
+             <h4><%=entry.distance%></h4>
+             <p>kilometes</p> 
+
+            
+             <span>zone</span>
+            <h5><%=entry.zone%></h5></a>
+            
              <form action="/dockit/<%= entry._id %>?_method=DELETE" method="POST">
             <input type="submit" value="DELETE"/>
             <a href="/dockit/<%=entry._id%>/edit"><i class="fas fa-pen-square"></i></a>

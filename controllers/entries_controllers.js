@@ -24,7 +24,7 @@ router.get('/new', (req, res) => {
   })
   
   // SHOW 
-  router.get('/dockit/:id', (req, res)=>{
+  router.get('/:id', (req, res)=>{
     Entry.findById(req.params.id, (err, entry)=>{
         console.log(req.params.id)
         res.render('show.ejs', {

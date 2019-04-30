@@ -1,5 +1,10 @@
+
+
+.container {
+    margin-top: 100px;
+}
 .row {
-    border: 1px solid green;
+    text-align: right;
 }
 
 header {
@@ -9,20 +14,40 @@ header {
     align-content: space-between;
     align-items: center;
 }
-.four {
-    display: flex;
-    flex-direction: column;
-    background: rgb(165, 51, 51);
+header img {
+    width: 20%;
+}
+.columns {
+    text-align: center;
     padding: 10px;
     margin: 10px;
+    background:#F6F6F6;
+    border: #0A78BF 1px solid;
+    border-radius: 2px;
     
 }
-
-.fas {
-   color: red;
+.three {
+    height: 400px;
 }
+.four {
+    height: 200px;
+}
+.nine {
+    height: 400px;
+}
+
 
 a {
     text-decoration: none;
-    color: blue;
+    color: #0A78BF;
+}
+span {
+    color: gray;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.detail_description {
+    text-align: center;
+    font-size: 1.5rem;
 }
