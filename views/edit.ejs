@@ -2,21 +2,49 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <% include ./partials/head.ejs %>
 </head>
 <body>
-
-    <h1>Change to your entry</h1>
-    <a href="/dockit">Back</a>
-    <div class="container">
-     <form action="/dockit/<%=entry._id%>?_method=PUT" method="POST">
-   Distance: <input type="text" name="distance" value="<%=entry.distance%>"/><br/>
-    Description:<input type="textarea" name="description" value="<%=entry.description%>"/><br>
-    Zone:<input type="number" name="zone" value="<%=entry.zone%>"/><br>
-
-    <input type="submit" name="" value="Submit Changes"/>
+<div class="container">
+ <header>
+      <a href="/dockit"><img src="/assets/dockit_logo.png" alt="logo"></a>
+      <nav>
+      <button>Log In</button>
+      <button> Sign Up</button>
+      </nav>
+      </header>
+ <span>edit your practice</span>
+ <div class="row">
+ <div class="three columns">
+    <form action="/dockit/<%=entry._id%>?_method=PUT" method="POST">
+    <span>distance</span><input type="text" name="distance" value="<%=entry.distance%>"/><br/>
+    <span>zone</span><input type="number" name="zone" value="<%=entry.zone%>"/><br/>
+    <span>water</span><input type="checkbox" name="onWater" value="<%=entry.onWater%>"/><br/>
+    <span>land</span><input type="checkbox" name="onLand" value="<%=entry.onLand%>"/><br/>
+    </div>
+    <div class="nine columns">
+    <span>description</span><br><textarea type="textarea" name="description"></textarea>
+    </div>
+    </div>
+    <div class="bottom_btn">
+    <a href="/dockit"><i class="fas fa-angle-double-left"></i></a>
+    <input  type="submit" name="" value="Submit"/>
+    </div>
     </form>
-    
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

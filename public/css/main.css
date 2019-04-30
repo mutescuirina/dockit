@@ -17,6 +17,12 @@ header {
 header img {
     width: 20%;
 }
+nav {
+    display: flex;
+
+}
+
+
 .columns {
     text-align: center;
     padding: 10px;
@@ -26,13 +32,11 @@ header img {
     border-radius: 2px;
     
 }
-.three {
+
+.four {
     height: 400px;
 }
-.four {
-    height: 200px;
-}
-.nine {
+.three, .nine, .seven {
     height: 400px;
 }
 
@@ -50,4 +54,12 @@ span {
 .detail_description {
     text-align: center;
     font-size: 1.5rem;
+}
+.bottom_btn {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
 }

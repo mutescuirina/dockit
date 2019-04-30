@@ -3,7 +3,7 @@ const router = express.Router();
 const Entry = require('../models/entries.js')
 
 
-
+router.use(express.static('public'));
 
 
 
@@ -61,7 +61,6 @@ router.get('/new', (req, res) => {
   });
   // UPDATE (SERVER)
   router.put( '/:id', (req, res)=>{
-    console.log('he')
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedEntry)=>{
         res.redirect('/dockit');
     });
