@@ -9,8 +9,19 @@ router.use(express.static('public'));
 
 //INDEX
 router.get('/', (req, res)=>{
+  if(req.body.onWater === "on") {
+    req.body.onWater = true;
+  } else {
+    req.body.onWater = false;
+  }
+  if(req.body.onLand === "on") {
+    req.body.onLand = true;
+  } else {
+    req.body.onLand = false;
+  }
+  
     Entry.find({}, (error, entry)=>{
-        // console.log(Entry)
+        console.log(entry)
         res.render('index.ejs', {
             entry: entry
         });
@@ -35,6 +46,16 @@ router.get('/new', (req, res) => {
   
   //CREATE
   router.post('/', (req, res) => {
+    if(req.body.onWater === "on") {
+      req.body.onWater = true;
+    } else {
+      req.body.onWater = false;
+    }
+    if(req.body.onLand === "on") {
+      req.body.onLand = true;
+    } else {
+      req.body.onLand = false;
+    }
       console.log(req.body);
     Entry.create(req.body, (error, entry)=>{
         if (error) {
@@ -53,6 +74,16 @@ router.get('/new', (req, res) => {
   })
   // EDIT (CLIENT)
   router.get('/:id/edit', (req, res)=>{
+    if(req.body.onWater === "on") {
+      req.body.onWater = true;
+    } else {
+      req.body.onWater = false;
+    }
+    if(req.body.onLand === "on") {
+      req.body.onLand = true;
+    } else {
+      req.body.onLand = false;
+    }
     Entry.findById(req.params.id, (err, foundEntry)=>{ //find the entry
         res.render('edit.ejs', {
             entry: foundEntry //pass in found entry
@@ -62,6 +93,7 @@ router.get('/new', (req, res) => {
   // UPDATE (SERVER)
   router.put( '/:id', (req, res)=>{
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedEntry)=>{
+      console.log('updatedEntry',updatedEntry );
         res.redirect('/dockit');
     });
   });

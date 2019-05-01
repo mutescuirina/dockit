@@ -19,16 +19,27 @@
     <form action="/dockit/<%=entry._id%>?_method=PUT" method="POST">
     <span>distance</span><input type="text" name="distance" value="<%=entry.distance%>"/><br/>
     <span>zone</span><input type="number" name="zone" value="<%=entry.zone%>"/><br/>
-    <span>water</span><input type="checkbox" name="onWater" value="<%=entry.onWater%>"/><br/>
-    <span>land</span><input type="checkbox" name="onLand" value="<%=entry.onLand%>"/><br/>
+
+    <%if(entry.onWater === true){%>
+ <span>water</span><input type="checkbox" name="onWater" checked value="<%=entry.onWater%>"/><br/>
+ <%} else {%>
+          <span>water</span><input type="checkbox" name="onWater"  value="<%=entry.onWater%>"/><br/>
+        <%}%>
+    <%if(entry.onLand === true){%>
+          <span>land</span><input type="checkbox" name="onLand"  checked value="<%=entry.onLand%>"/><br/>
+          <%} else {%>
+          <span>land</span><input type="checkbox" name="onLand"  value="<%=entry.onLand%>"/><br/>
+        <%}%> 
+
+   
     </div>
     <div class="nine columns">
-    <span>description</span><br><textarea type="textarea" name="description"></textarea>
+    <span>description</span><br><textarea  placeholder="..." type="textarea" name="description"></textarea>
     </div>
     </div>
     <div class="bottom_btn">
     <a href="/dockit"><i class="fas fa-angle-double-left"></i></a>
-    <input  type="submit" name="" value="Submit"/>
+    <input class="button-primary"  type="submit" name="" value="Submit"/>
     </div>
     </form>
     </div>

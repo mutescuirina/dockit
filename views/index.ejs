@@ -7,6 +7,7 @@
 <body>
      <div class="container">
      <% include ./partials/header.ejs %>
+     <span>row.&nbsp record. &nbsp get faster.</span>
      <div class="row">
     
        <a href="/dockit/new"><i class="far fa-plus-square"></i></a>
@@ -18,15 +19,29 @@
 
         <a href="/dockit/<%=entry._id%>">
               <span>distance</span> 
-             <h4><%=entry.distance%></h4>
-             <p>kilometes</p> 
+             <h2><%=entry.distance +'km'%></h2>
+    
              <span>zone</span>
-            <h5><%=entry.zone%></h5></a>
+            <h5><%=entry.zone%></h5>
+            <%if(entry.onWater === true) {%>
+            <i class="fas fa-water"></i>
+            <%}%>
+            <%if(entry.onLand === true) {%>
+            <i class="fas fa-dumbbell"></i>
+            <%}%>
             
+            
+            </a>
+            <div class="btns">
              <form action="/dockit/<%= entry._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE"/>
-            <a href="/dockit/<%=entry._id%>/edit"><i class="fas fa-pen-square"></i></a>
+            <input class="button-primary" style="background:#0A78BF;" type="submit" value="X"/>
             </form>
+            <form action="/dockit/<%=entry._id%>/edit">
+            <input class="button-primary" style="background:#0A78BF;" type="submit" value="edit"/>
+            </form>
+            </div>
+            
+            
            </div> 
        
      

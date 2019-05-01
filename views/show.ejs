@@ -16,6 +16,12 @@
              <p>kilometes</p> 
              <span>zone</span>
             <h5><%=entry.zone%></h5></a>
+            <%if (entry.onWater === true) {%>
+           <p>water</p>
+           <%}%>
+           <% if (entry.onLand === true) {%>
+            <p>land</p>
+            <%}%>
             </div>
             <div class="nine columns">
             <span>description</span>

@@ -13,16 +13,16 @@
     <form action="/dockit" method="POST">
     <span>distance</span><input type="number" name="distance"/><br>
     <span>zone</span><input type="number" name="zone"/><br>
-    <span>water</span><input type="checkbox" name="onWater"/><br>
-    <span>land</span><input type="checkbox" name="onLand"/><br>
+    <span>water</span><input type="checkbox" name="onWater" id="onWater"/><br>
+    <span>land</span><input type="checkbox"  name="onLand" id="onLand"/><br>
     </div>
     <div class="nine columns">
-    <span>description</span><br><textarea type="textarea" name="description"></textarea>
+    <span>description</span><br><textarea placeholder="..." type="textarea" name="description"></textarea>
     </div>
     </div>
-    <div class="bottom_btn">
+    <div class="button-primary bottom_btn">
     <a href="/dockit"><i class="fas fa-angle-double-left"></i></a>
-    <input  type="submit" name="" value="Submit"/>
+    <input  type="submit" class="button-primary" name="" value="Submit"/>
     </div>
     </form>
     </div>

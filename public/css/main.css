@@ -5,6 +5,7 @@
 }
 .row {
     text-align: right;
+    /* border: 1px solid black; */
 }
 
 header {
@@ -19,8 +20,11 @@ header img {
 }
 nav {
     display: flex;
+    display: flex;
+    margin-right: 20px;
 
 }
+
 
 
 .columns {
@@ -34,7 +38,7 @@ nav {
 }
 
 .four {
-    height: 400px;
+    height: 300px;
 }
 .three, .nine, .seven {
     height: 400px;
@@ -62,4 +66,32 @@ span {
     justify-content: space-between;
     align-content: space-between;
     align-items: center;
+}
+.btns {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+    color: #FFF;
+    background-color: #33C3F0;
+    border-color: #33C3F0;
+}
+textarea {
+    height: 300px;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+input, select, fieldset {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+input {
+    line-height: normal;
+    color: #0978BE;
 }
